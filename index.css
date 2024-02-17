@@ -1,0 +1,31 @@
+/* Estilos para a barra de navegação */
+.navbar {
+    background-color: #343a40;
+  }
+  
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  /* Estilos para os cartões de produtos */
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Estilos para os botões de compra */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
