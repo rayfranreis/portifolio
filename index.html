@@ -1,5 +1,5 @@
-g<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,69 +12,78 @@ g<!DOCTYPE html>
 <!-- Barra de Navegação -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Início</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+   
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Ação</a></li>
+            <li><a class="dropdown-item" href="#">Outra ação</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Algo mais aqui</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+      
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div>
   </div>
 </nav>
 
+<!-- Texto "Loja Online" centralizado -->
+<div class="text-center">
+  <h1>Loja Online</h1>
+</div>
+
+<!-- Mensagem de Produto Adicionado -->
+<div id="mensagemProdutoAdicionado" class="alert alert-success" style="display: none;">
+  Produto adicionado no carrinho!
+</div>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-4">
       <div class="card">
-        <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+        <img src="assets/img/masculino-calca-street-masculina-preta-branca-p-16615245674531-723bcf1fda48e2da7d16879776533984-1024-1024.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Produto 1</h5>
-          <p class="card-text">Descrição do produto 1.</p>
+          <h5 class="card-title">CALÇA MASCULINA STREET PRETA/BRANCA</h5>
+          <p class="card-text">PRETA/BRANCA</p>
           <a href="#" class="btn btn-primary btn-comprar" data-nome="Produto 1" data-preco="100.00">Comprar</a>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card">
-        <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+        <img src="assets/img/tenis-masculino-sport-ultra-tenis-masculino-sport-ultra-calcados-010-fragatto-520433_1024x.webp" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Produto 2</h5>
-          <p class="card-text">Descrição do produto 2.</p>
+          <h5 class="card-title">Tênis Sports Ultra</h5>
+          <p class="card-text">Tênis de alta performance.</p>
           <a href="#" class="btn btn-primary btn-comprar" data-nome="Produto 2" data-preco="150.00">Comprar</a>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card">
-        <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+        <img src="assets/img/vista-frontal-de-camiseta-branca-isolada_125540-1194.avif" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Produto 3</h5>
-          <p class="card-text">Descrição do produto 3.</p>
+          <h5 class="card-title">Camisa Básica</h5>
+          <p class="card-text">Camisa básica branca masculina.</p>
           <a href="#" class="btn btn-primary btn-comprar" data-nome="Produto 3" data-preco="200.00">Comprar</a>
         </div>
       </div>
@@ -88,4 +97,39 @@ g<!DOCTYPE html>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modalCompraLabel">Confirmar Compra</h5>
-        <button type="button" class
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Você está prestes a comprar:</p>
+        <p id="produtoCompra"></p>
+        <p id="precoCompra"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnConfirmarCompra">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript do Bootstrap e do seu script personalizado -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
+<script>
+  // Adiciona evento de clique aos botões de compra
+  document.querySelectorAll('.btn-comprar').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Obtém o nome do produto
+      const nomeProduto = btn.getAttribute('data-nome');
+      // Exibe a mensagem de produto adicionado
+      document.getElementById('mensagemProdutoAdicionado').style.display = 'block';
+      // Oculta a mensagem após 3 segundos
+      setTimeout(() => {
+        document.getElementById('mensagemProdutoAdicionado').style.display = 'none';
+      }, 3000);
+    });
+  });
+</script>
+
+</body>
+</
